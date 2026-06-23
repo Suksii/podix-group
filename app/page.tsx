@@ -6,6 +6,7 @@ import Process from "@/components/Process";
 import Gallery from "@/components/Gallery";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import ScrollLine from "@/components/ScrollLine";
 import { site } from "@/components/site";
 
 const jsonLd = {
@@ -35,6 +36,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Header />
+      <ScrollLine />
       <main className="flex-1">
         <Hero />
         <Services />
