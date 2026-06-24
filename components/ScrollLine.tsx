@@ -51,8 +51,11 @@ export default function ScrollLine() {
         setProgress(p);
         const path = pathRef.current;
         if (path) {
-          const pt = path.getPointAtLength(path.getTotalLength() * p);
-          setTip({ x: pt.x, y: pt.y });
+          const total = path.getTotalLength();
+          if (total > 0) {
+            const pt = path.getPointAtLength(total * p);
+            setTip({ x: pt.x, y: pt.y });
+          }
         }
       });
     };

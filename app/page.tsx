@@ -7,6 +7,7 @@ import Gallery from "@/components/Gallery";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ScrollLine from "@/components/ScrollLine";
+import BrandDivider from "@/components/BrandDivider";
 import { site } from "@/components/site";
 
 const jsonLd = {
@@ -42,6 +43,7 @@ export default function Home() {
         <Services />
         <WhyUs />
         <Process />
+        <BrandDivider />
         <Gallery />
         <Contact />
       </main>
