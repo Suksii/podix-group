@@ -27,6 +27,13 @@ export type Usluga = {
   poster?: string;
   /** Slike iz galerije vezane za uslugu */
   gallery: string[];
+  /** Prije/poslije poređenje na detaljnoj stranici */
+  beforeAfter?: {
+    before: string;
+    after: string;
+    beforeAlt: string;
+    afterAlt: string;
+  };
   featured?: boolean;
 };
 
@@ -89,6 +96,12 @@ export const usluge: Usluga[] = [
       "/galerija/rad-08.jpg",
       "/galerija/rad-09.jpg",
     ],
+    beforeAfter: {
+      before: "/galerija/rad-09.jpg",
+      after: "/slike/foto-parket-lakiran.jpg",
+      beforeAlt: "Star i izlizan parket u riblju kost prije obnove",
+      afterAlt: "Parket nakon brušenja i lakiranja — visoki sjaj",
+    },
     featured: true,
   },
   {

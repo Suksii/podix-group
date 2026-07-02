@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
 import VideoInView from "@/components/VideoInView";
+import BeforeAfter from "@/components/BeforeAfter";
 import UslugeGrid from "@/components/UslugeGrid";
 import CtaBand from "@/components/CtaBand";
 import { usluge, getUsluga } from "@/components/data/usluge";
@@ -153,6 +154,33 @@ export default async function UslugaPage({ params }: PageProps<"/usluge/[slug]">
           </div>
         )}
       </section>
+
+      {/* Prije / poslije */}
+      {usluga.beforeAfter && (
+        <section className="py-20 sm:py-24">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 sm:px-8 lg:grid-cols-2">
+            <Reveal>
+              <span className="eyebrow">Prije i poslije</span>
+              <h2 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+                Uvjerite se <span className="text-gradient">sami</span>
+              </h2>
+              <p className="mt-4 max-w-lg text-lg text-muted">
+                Povucite ručicu lijevo-desno i pogledajte razliku koju napravi
+                obnova poda.
+              </p>
+            </Reveal>
+            <Reveal delay={120}>
+              <BeforeAfter
+                before={usluga.beforeAfter.before}
+                after={usluga.beforeAfter.after}
+                beforeAlt={usluga.beforeAfter.beforeAlt}
+                afterAlt={usluga.beforeAfter.afterAlt}
+                className="mx-auto aspect-[4/5] w-full max-w-xl"
+              />
+            </Reveal>
+          </div>
+        </section>
+      )}
 
       {/* Ostale usluge */}
       <section className="py-20 sm:py-24">

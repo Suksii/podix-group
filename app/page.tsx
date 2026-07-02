@@ -5,6 +5,7 @@ import Process from "@/components/Process";
 import BrandDivider from "@/components/BrandDivider";
 import UslugeGrid from "@/components/UslugeGrid";
 import GalleryGrid from "@/components/GalleryGrid";
+import BeforeAfter from "@/components/BeforeAfter";
 import Reveal from "@/components/Reveal";
 import { radovi } from "@/components/data/radovi";
 import { site } from "@/components/site";
@@ -87,6 +88,40 @@ export default function Home() {
 
         <WhyUs />
         <Process />
+
+        {/* Prije / poslije */}
+        <section className="relative py-24 sm:py-32">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 sm:px-8 lg:grid-cols-2">
+            <Reveal>
+              <span className="eyebrow">Prije i poslije</span>
+              <h2 className="mt-4 font-display text-4xl font-bold tracking-tight sm:text-5xl">
+                Isti pod, <span className="text-gradient">novi život.</span>
+              </h2>
+              <p className="mt-4 max-w-lg text-lg text-muted">
+                Star, izlizan parket ne mora na deponiju. Brušenjem, kitovanjem
+                i lakiranjem vraćamo ga u prvobitno stanje — povucite ručicu i
+                uvjerite se sami.
+              </p>
+              <Link
+                href="/usluge/brusenje-i-lakiranje"
+                className="group mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+              >
+                Brušenje i lakiranje
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Reveal>
+            <Reveal delay={120}>
+              <BeforeAfter
+                before="/galerija/rad-09.jpg"
+                after="/slike/foto-parket-lakiran.jpg"
+                beforeAlt="Star i izlizan parket u riblju kost prije obnove"
+                afterAlt="Isti tip parketa nakon brušenja i lakiranja — visoki sjaj"
+                className="mx-auto aspect-[4/5] w-full max-w-xl"
+              />
+            </Reveal>
+          </div>
+        </section>
+
         <BrandDivider />
 
         {/* Izdvojeni radovi */}
