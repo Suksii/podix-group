@@ -6,6 +6,8 @@ export const site = {
   name: "Podix Group",
   phoneDisplay: "068 890 421",
   phoneHref: "tel:+38268890421",
+  phone2Display: "068 008 008",
+  phone2Href: "tel:+38268008008",
   email: "podixgroup@gmail.com",
   instagram: "https://www.instagram.com/podixgroup",
   instagramHandle: "@podixgroup",

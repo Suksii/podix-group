@@ -19,7 +19,7 @@ const jsonLd = {
   url: site.url,
   description:
     "Isporuka i ugradnja svih vrsta podova: parket, laminat, LVT/SPC, itison i tepih ploče, nivelacija podloge i podovi za teretane.",
-  telephone: site.phoneDisplay,
+  telephone: [site.phoneDisplay, site.phone2Display],
   email: site.email,
   areaServed: site.location,
   sameAs: [site.instagram],

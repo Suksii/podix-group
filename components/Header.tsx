@@ -155,6 +155,13 @@ export default function Header() {
               <PhoneIcon className="h-5 w-5" />
               {site.phoneDisplay}
             </a>
+            <a
+              href={site.phone2Href}
+              className="inline-flex items-center gap-2 text-lg font-semibold text-brand-600"
+            >
+              <PhoneIcon className="h-5 w-5" />
+              {site.phone2Display}
+            </a>
             <Link
               href="/kontakt"
               onClick={() => setOpen(false)}

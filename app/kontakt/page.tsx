@@ -16,7 +16,7 @@ const jsonLd = {
   "@type": "HomeAndConstructionBusiness",
   name: site.name,
   url: site.url,
-  telephone: site.phoneDisplay,
+  telephone: [site.phoneDisplay, site.phone2Display],
   email: site.email,
   areaServed: site.location,
   openingHours: "Mo-Sa 08:00-18:00",

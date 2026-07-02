@@ -81,6 +81,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href={site.phone2Href} className="flex items-center gap-2 text-white/70 transition-colors hover:text-brand-300">
+                  <PhoneIcon className="h-4 w-4" /> {site.phone2Display}
+                </a>
+              </li>
+              <li>
                 <a href={`mailto:${site.email}`} className="flex items-center gap-2 text-white/70 transition-colors hover:text-brand-300">
                   <MailIcon className="h-4 w-4" /> {site.email}
                 </a>

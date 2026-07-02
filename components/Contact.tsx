@@ -5,6 +5,7 @@ import { PhoneIcon, MailIcon, PinIcon, ClockIcon, InstagramIcon } from "./icons"
 
 const details = [
   { icon: PhoneIcon, label: "Telefon", value: site.phoneDisplay, href: site.phoneHref },
+  { icon: PhoneIcon, label: "Telefon", value: site.phone2Display, href: site.phone2Href },
   { icon: MailIcon, label: "Email", value: site.email, href: `mailto:${site.email}` },
   {
     icon: InstagramIcon,
@@ -57,7 +58,7 @@ export default function Contact() {
                       </span>
                     );
                     return (
-                      <li key={d.label}>
+                      <li key={d.value}>
                         {d.href ? (
                           <a
                             href={d.href}
