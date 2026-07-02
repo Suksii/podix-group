@@ -154,6 +154,36 @@ export function SparkIcon(props: IconProps) {
   );
 }
 
+export function CarpetIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="M7 5v14M17 5v14" opacity="0.55" />
+      <path d="M10 9c1-1 3-1 4 0M10 12c1-1 3-1 4 0M10 15c1-1 3-1 4 0" />
+    </svg>
+  );
+}
+
+export function LevelIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M3 17h18" />
+      <path d="M3 17c3-2 6-6 9-6s6 4 9 6" opacity="0.55" />
+      <rect x="9" y="3" width="6" height="4" rx="1" />
+      <path d="M12 7v4" />
+    </svg>
+  );
+}
+
+export function PlayIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="m10 8.5 5 3.5-5 3.5v-7Z" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
 export function BroomIcon(props: IconProps) {
   return (
     <svg {...base} {...props}>

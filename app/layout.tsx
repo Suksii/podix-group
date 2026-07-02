@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import ScrollLine from "@/components/ScrollLine";
+import { site } from "@/components/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -14,16 +18,14 @@ const display = Space_Grotesk({
   display: "swap",
 });
 
-const SITE_URL = "https://podixgroup.me";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL(site.url),
   title: {
-    default: "Podix Group — Ugradnja podova, parket, laminat, LVT/SPC i puzle za teretane",
+    default: "Podix Group — Ugradnja podova: parket, laminat, LVT/SPC, itison",
     template: "%s · Podix Group",
   },
   description:
-    "Podix Group — profesionalna ugradnja svih vrsta podova. Isporuka i ugradnja parketa, laminata i LVT/SPC podova, te prodaja i ugradnja gumenih puzli za teretane. Precizno, čisto i uz garanciju.",
+    "Podix Group — isporuka i profesionalna ugradnja svih vrsta podova: parket, laminat, LVT/SPC, itison i tepih ploče, nivelacija podloge i podovi za teretane. Brza isporuka, profesionalna ugradnja.",
   keywords: [
     "podovi",
     "ugradnja podova",
@@ -32,27 +34,41 @@ export const metadata: Metadata = {
     "LVT",
     "SPC",
     "vinil pod",
+    "itison",
+    "tepih ploče",
+    "nivelacija poda",
+    "košuljica",
     "puzle za teretane",
-    "gumeni pod",
     "brušenje parketa",
     "Podix Group",
+    "Crna Gora",
   ],
   authors: [{ name: "Podix Group" }],
+  // Favicon je u public/ umjesto app/ — file-based ikona u app/ blokira
+  // instant validaciju (računa se kao runtime metadata).
+  icons: { icon: "/favicon.ico" },
   openGraph: {
     type: "website",
     locale: "sr_RS",
     siteName: "Podix Group",
     title: "Podix Group — Podovi koji traju",
     description:
-      "Ugradnja svih vrsta podova: parket, laminat, LVT/SPC i puzle za teretane. Precizno, čisto i uz garanciju.",
-    images: [{ url: "/podix1.jpg", width: 1080, height: 1080, alt: "Podix Group — isporuka i ugradnja podova" }],
+      "Isporuka i ugradnja svih vrsta podova: parket, laminat, LVT/SPC, itison i podovi za teretane. Brza isporuka, profesionalna ugradnja.",
+    images: [
+      {
+        url: "/slike/foto-parket-lakiran.jpg",
+        width: 1200,
+        height: 1600,
+        alt: "Podix Group — izbrušen i lakiran parket u riblju kost",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Podix Group — Podovi koji traju",
     description:
-      "Ugradnja svih vrsta podova: parket, laminat, LVT/SPC i puzle za teretane.",
-    images: ["/podix1.jpg"],
+      "Isporuka i ugradnja svih vrsta podova: parket, laminat, LVT/SPC, itison i podovi za teretane.",
+    images: ["/slike/foto-parket-lakiran.jpg"],
   },
 };
 
@@ -66,7 +82,12 @@ export default function RootLayout({
       lang="sr"
       className={`${inter.variable} ${display.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col overflow-x-hidden">{children}</body>
+      <body className="min-h-full flex flex-col overflow-x-hidden">
+        <Header />
+        <ScrollLine />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

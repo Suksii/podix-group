@@ -1,14 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import { navLinks, site } from "./site";
+import { usluge } from "./data/usluge";
 import { InstagramIcon, PhoneIcon, MailIcon, ArrowRight } from "./icons";
-
-const serviceList = [
-  "Parket",
-  "Laminat",
-  "LVT / SPC podovi",
-  "Puzle za teretane",
-  "Brušenje i lakiranje",
-];
 
 export default function Footer() {
   return (
@@ -22,13 +16,13 @@ export default function Footer() {
           <h2 className="max-w-xl font-display text-3xl font-bold tracking-tight sm:text-4xl">
             Vaš sljedeći pod počinje jednim pozivom.
           </h2>
-          <a
-            href="#kontakt"
+          <Link
+            href="/kontakt"
             className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 text-base font-semibold text-white shadow-glow transition-transform hover:-translate-y-0.5"
           >
             Zatraži ponudu
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </a>
+          </Link>
         </div>
 
         {/* Columns */}
@@ -38,8 +32,8 @@ export default function Footer() {
               <Image src="/podix-logo.png" alt="Podix Group" width={150} height={64} className="h-11 w-auto" />
             </div>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
-              Ugradnja svih vrsta podova — parket, laminat, LVT/SPC i puzle za
-              teretane. Precizno, čisto i uz garanciju.
+              Isporuka i ugradnja svih vrsta podova — parket, laminat, LVT/SPC,
+              itison i podovi za teretane. Precizno, čisto i uz garanciju.
             </p>
           </div>
 
@@ -50,9 +44,9 @@ export default function Footer() {
             <ul className="mt-5 space-y-3 text-sm">
               {navLinks.map((l) => (
                 <li key={l.href}>
-                  <a href={l.href} className="text-white/70 transition-colors hover:text-brand-300">
+                  <Link href={l.href} className="text-white/70 transition-colors hover:text-brand-300">
                     {l.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -63,11 +57,14 @@ export default function Footer() {
               Usluge
             </h3>
             <ul className="mt-5 space-y-3 text-sm">
-              {serviceList.map((s) => (
-                <li key={s}>
-                  <a href="#usluge" className="text-white/70 transition-colors hover:text-brand-300">
-                    {s}
-                  </a>
+              {usluge.slice(0, 6).map((u) => (
+                <li key={u.slug}>
+                  <Link
+                    href={`/usluge/${u.slug}`}
+                    className="text-white/70 transition-colors hover:text-brand-300"
+                  >
+                    {u.title}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -104,7 +101,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 py-7 text-sm text-white/45 sm:flex-row">
-          <p>© {new Date().getFullYear()} {site.name}. Sva prava zadržana.</p>
+          <p>© 2026 {site.name}. Sva prava zadržana.</p>
           <p>
             Izrada sajta — <span className="text-white/70">Podix Group</span>
           </p>

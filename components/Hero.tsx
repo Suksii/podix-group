@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Link from "next/link";
+import VideoInView from "./VideoInView";
 import { ArrowRight, CheckIcon, SparkIcon } from "./icons";
 import { site } from "./site";
 
@@ -6,20 +7,20 @@ const marqueeItems = [
   "Parket",
   "Laminat",
   "LVT / SPC",
-  "Puzle za teretane",
+  "Itison i tepih ploče",
+  "Nivelacija podloge",
   "Brušenje & lakiranje",
-  "Vinil podovi",
-  "Industrijski podovi",
+  "Podovi za teretane",
 ];
 
 export default function Hero() {
   return (
-    <section id="pocetak" className="relative overflow-hidden pt-28 pb-0 sm:pt-32">
+    <section className="relative overflow-hidden pt-28 pb-0 sm:pt-32">
       {/* Decorative brand orbs */}
       <div className="pointer-events-none absolute -top-24 -right-24 h-[28rem] w-[28rem] rounded-full bg-brand/20 blur-3xl" />
       <div className="pointer-events-none absolute top-40 -left-32 h-80 w-80 rounded-full bg-brand-300/30 blur-3xl animate-float-slow" />
 
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
         {/* Copy */}
         <div className="relative">
           <span className="eyebrow animate-[fade-up_0.7s_both]">
@@ -27,35 +28,35 @@ export default function Hero() {
             Specijalisti za podove
           </span>
 
-          <h1 className="mt-5 text-balance font-display text-[2.1rem] font-bold leading-[1.08] tracking-tight sm:text-6xl sm:leading-[1.04] xl:text-[4.4rem]">
+          <h1 className="mt-5 text-balance font-display text-[2.1rem] font-bold leading-[1.08] tracking-tight animate-[fade-up_0.7s_0.08s_both] sm:text-6xl sm:leading-[1.04] xl:text-[4.2rem]">
             Podovi koji traju{" "}
             <span className="text-gradient">cijeli život.</span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-            {site.name} ugrađuje sve vrste podova — parket, laminat, LVT/SPC i
-            gumene puzle za teretane. Isporuka, priprema i precizna ugradnja, sve
-            na jednom mjestu i uz garanciju kvaliteta.
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted animate-[fade-up_0.7s_0.16s_both]">
+            {site.name} isporučuje i ugrađuje sve vrste podova — parket,
+            laminat, LVT/SPC, itison i podove za teretane. Od pripreme podloge
+            do završnog detalja, sve na jednom mjestu.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a
-              href="#kontakt"
+          <div className="mt-8 flex flex-col gap-3 animate-[fade-up_0.7s_0.24s_both] sm:flex-row sm:items-center">
+            <Link
+              href="/kontakt"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-brand px-7 py-4 text-base font-semibold text-white shadow-glow transition-transform hover:-translate-y-0.5"
             >
               Besplatna procjena
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </a>
-            <a
-              href="#usluge"
+            </Link>
+            <Link
+              href="/radovi"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-white/60 px-7 py-4 text-base font-semibold text-ink backdrop-blur transition-colors hover:border-brand/50 hover:text-brand-600"
             >
-              Pogledaj usluge
-            </a>
+              Pogledaj radove
+            </Link>
           </div>
 
           {/* Trust row */}
-          <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-ink/70">
+          <ul className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-ink/70 animate-[fade-up_0.7s_0.32s_both]">
             {["Garancija na ugradnju", "Čista montaža", "Poštovanje rokova"].map((t) => (
               <li key={t} className="flex items-center gap-2">
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand/15 text-brand-600">
@@ -67,56 +68,37 @@ export default function Hero() {
           </ul>
         </div>
 
-        {/* Visual */}
-        <div className="relative">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] bg-ink shadow-soft sm:max-w-lg">
-            {/* Floor in perspective */}
-            <div className="absolute inset-0 bg-grid opacity-40" />
-            <div
-              className="absolute inset-x-0 bottom-0 h-3/5"
-              style={{ perspective: "640px" }}
-            >
-              <div
-                className="absolute inset-0 origin-bottom"
-                style={{
-                  transform: "rotateX(58deg) scaleY(1.4)",
-                  backgroundColor: "#c97c3f",
-                  backgroundImage:
-                    "repeating-linear-gradient(90deg, rgba(0,0,0,0.18) 0 2px, transparent 2px 64px), repeating-linear-gradient(0deg, rgba(0,0,0,0.22) 0 2px, transparent 2px 26px), linear-gradient(115deg, rgba(255,255,255,0.18), transparent 55%)",
-                  backgroundSize: "64px 26px, 64px 26px, 100% 100%",
-                  maskImage: "linear-gradient(to top, #000 35%, transparent)",
-                }}
-              />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
-
-            {/* Brand wordmark plate */}
-            <div className="absolute left-6 top-6 rounded-2xl bg-white/95 px-4 py-3 shadow-soft">
-              <Image src="/podix-logo.png" alt="Podix Group" width={130} height={56} className="h-9 w-auto" />
-            </div>
-
-            {/* Floating rating chip */}
-            <div className="absolute right-5 top-24 animate-float rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-white backdrop-blur-md">
-              <div className="text-2xl font-bold leading-none">5,0★</div>
-              <div className="mt-1 text-xs text-white/70">Ocjena klijenata</div>
-            </div>
+        {/* Visual — montaža stvarnih radova */}
+        <div className="relative animate-[fade-up_0.9s_0.2s_both]">
+          <div className="relative mx-auto aspect-[9/16] w-full max-w-[21rem] overflow-hidden rounded-[2rem] bg-ink shadow-soft ring-1 ring-ink/10 sm:max-w-sm">
+            <VideoInView
+              src="/video/podix-reel.mp4"
+              poster="/posteri/podix-reel.jpg"
+              className="absolute inset-0 h-full w-full object-cover"
+              aria-label="Montaža radova Podix Group — od pripreme podloge do gotovog poda"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
 
             {/* Caption */}
-            <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur-md">
-              <div className="text-xs font-semibold uppercase tracking-widest text-brand-200">
-                Od ideje do gotovog poda
+            <div className="pointer-events-none absolute inset-x-4 bottom-4 rounded-2xl border border-white/10 bg-ink/40 p-4 backdrop-blur-md">
+              <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-brand-200">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-300" />
+                Naši radovi uživo
               </div>
-              <p className="mt-1.5 text-sm leading-snug text-white/90">
-                Savjet, mjerenje, izbor materijala i ugradnja — bez stresa, do
-                najsitnijeg detalja.
+              <p className="mt-1 text-sm leading-snug text-white/90">
+                Od pripreme podloge do gotovog poda — 20 sekundi našeg posla.
               </p>
             </div>
           </div>
 
-          {/* Floating stat behind */}
+          {/* Floating stat */}
           <div className="absolute -bottom-4 -left-2 hidden rounded-2xl bg-white px-5 py-4 shadow-soft sm:block">
             <div className="font-display text-3xl font-bold text-brand-600">500+</div>
             <div className="text-xs font-medium text-muted">završenih projekata</div>
+          </div>
+          <div className="absolute -right-2 top-8 hidden animate-float rounded-2xl bg-white px-5 py-4 shadow-soft lg:block">
+            <div className="font-display text-3xl font-bold text-brand-600">5,0★</div>
+            <div className="text-xs font-medium text-muted">ocjena klijenata</div>
           </div>
         </div>
       </div>

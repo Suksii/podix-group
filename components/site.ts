@@ -11,12 +11,13 @@ export const site = {
   instagramHandle: "@podixgroup",
   location: "Crna Gora",
   hours: "Pon – Sub, 08:00 – 18:00",
+  url: "https://podixgroup.me",
 } as const;
 
 export const navLinks = [
-  { href: "#usluge", label: "Usluge" },
-  { href: "#zasto", label: "Zašto mi" },
-  { href: "#proces", label: "Proces" },
-  { href: "#radovi", label: "Radovi" },
-  { href: "#kontakt", label: "Kontakt" },
+  { href: "/", label: "Početna" },
+  { href: "/usluge", label: "Usluge" },
+  { href: "/radovi", label: "Radovi" },
+  { href: "/o-nama", label: "O nama" },
+  { href: "/kontakt", label: "Kontakt" },
 ] as const;
