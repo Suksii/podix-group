@@ -8,8 +8,11 @@ const services = [
   "Parket",
   "Laminat",
   "LVT / SPC",
-  "Puzle za teretane",
+  "Tepisi / itison",
+  "Nivelacija podloge",
   "Brušenje i lakiranje",
+  "Reparacija drveta",
+  "Puzle za teretane",
   "Drugo",
 ];
 

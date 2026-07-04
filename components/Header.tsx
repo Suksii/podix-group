@@ -46,10 +46,10 @@ export default function Header() {
             <Image
               src="/podix-logo.png"
               alt="Podix Group"
-              width={150}
-              height={64}
+              width={165}
+              height={70}
               priority
-              className="h-12 w-auto transition-transform duration-500 group-hover:scale-105"
+              className="h-[3.75rem] w-auto transition-transform duration-500 group-hover:scale-105"
             />
           </Link>
 
@@ -118,7 +118,7 @@ export default function Header() {
         }`}
       >
         <div className="flex h-20 shrink-0 items-center justify-between px-5">
-          <Image src="/podix-logo.png" alt="Podix Group" width={150} height={64} className="h-11 w-auto" />
+          <Image src="/podix-logo.png" alt="Podix Group" width={165} height={70} className="h-[3.25rem] w-auto" />
           <button
             type="button"
             onClick={() => setOpen(false)}

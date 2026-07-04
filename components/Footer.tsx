@@ -32,8 +32,9 @@ export default function Footer() {
               <Image src="/podix-logo.png" alt="Podix Group" width={150} height={64} className="h-11 w-auto" />
             </div>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
-              Isporuka i ugradnja svih vrsta podova — parket, laminat, LVT/SPC,
-              itison i podovi za teretane. Precizno, čisto i uz garanciju.
+              Isporuka i ugradnja svih vrsta podova — parket, laminat,
+              LVT/SPC, tepisi i itison, podovi za teretane — i reparacija
+              drvenih materijala. Kvalitet, preciznost, povjerenje.
             </p>
           </div>
 

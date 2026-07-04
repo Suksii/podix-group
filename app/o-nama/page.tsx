@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import Counter from "@/components/Counter";
 import Process from "@/components/Process";
 import CtaBand from "@/components/CtaBand";
 import { ShieldIcon, SparkIcon, BroomIcon, ClockIcon } from "@/components/icons";
@@ -15,12 +14,7 @@ export const metadata: Metadata = {
     "Podix Group — tim specijalizovan za isporuku i ugradnju podova. Upoznajte kako radimo i zašto nam klijenti vjeruju.",
 };
 
-const stats = [
-  { to: 500, suffix: "+", label: "Završenih projekata" },
-  { to: 10, suffix: "+", label: "Godina iskustva" },
-  { to: 100, suffix: "%", label: "Zadovoljnih klijenata" },
-  { to: 7, suffix: "", label: "Vrsta podova" },
-];
+const prostori = ["Stanovi i kuće", "Hoteli", "Kancelarije", "Teretane", "Stepeništa"];
 
 const vrijednosti = [
   {
@@ -89,14 +83,16 @@ export default function ONamaPage() {
             </h2>
             <div className="mt-5 space-y-4 text-lg leading-relaxed text-muted">
               <p>
-                Počeli smo kao ekipa parketara, a danas pokrivamo sve vrste
-                podnih obloga: parket, laminat, LVT/SPC, itison i tepih ploče,
-                sportske podove i gumene puzle za teretane.
+                Podix Group isporučuje i ugrađuje sve vrste podnih obloga:
+                parket, laminat, LVT/SPC, tepihe, itisone i tepih ploče,
+                sportske podove i gumene puzle za teretane. Uz podove,
+                repariramo i sve druge drvene materijale — vrata, škure i
+                stepeništa.
               </p>
               <p>
                 Ono što nas izdvaja je priprema. Prije nego što i jedna daska
                 legne na pod, podloga mora biti ravna, suva i čista — zato
-                radimo i nivelaciju, košuljice i mašinsku obradu podloge.
+                radimo i izlivanje nivelin mase i mašinsku obradu podloge.
               </p>
               <p>
                 Radimo brzo, ali ne žurimo. Dogovoreni rok je dogovor, a
@@ -104,16 +100,21 @@ export default function ONamaPage() {
               </p>
             </div>
 
-            {/* Stats */}
-            <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
-              {stats.map((s) => (
-                <div key={s.label}>
-                  <div className="font-display text-4xl font-bold text-ink">
-                    <Counter to={s.to} suffix={s.suffix} />
-                  </div>
-                  <div className="mt-1.5 text-sm text-muted">{s.label}</div>
-                </div>
-              ))}
+            {/* Gdje radimo */}
+            <div className="mt-10">
+              <div className="text-sm font-semibold uppercase tracking-wider text-muted/70">
+                Gdje radimo
+              </div>
+              <ul className="mt-4 flex flex-wrap gap-2.5">
+                {prostori.map((p) => (
+                  <li
+                    key={p}
+                    className="rounded-full border border-ink/10 bg-white px-4 py-2 text-sm font-medium text-ink/80 shadow-soft"
+                  >
+                    {p}
+                  </li>
+                ))}
+              </ul>
             </div>
           </Reveal>
         </div>

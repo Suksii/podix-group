@@ -175,6 +175,18 @@ export function LevelIcon(props: IconProps) {
   );
 }
 
+export function WoodIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="3" y="9" width="18" height="6" rx="1.5" />
+      <path d="M7 9v6M15 9v6" opacity="0.55" />
+      <path d="M9.5 12h3M17 12h1.5" opacity="0.55" />
+      <path d="M5 6.5h14M6.5 4h11" opacity="0.35" />
+      <path d="M5 17.5h14M6.5 20h11" opacity="0.35" />
+    </svg>
+  );
+}
+
 export function PlayIcon(props: IconProps) {
   return (
     <svg {...base} {...props}>

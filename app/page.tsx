@@ -25,12 +25,13 @@ const jsonLd = {
   areaServed: site.location,
   sameAs: [site.instagram],
   makesOffer: [
-    "Ugradnja parketa",
+    "Isporuka i ugradnja parketa",
     "Brušenje i lakiranje parketa",
-    "Ugradnja laminata",
-    "Ugradnja LVT/SPC podova",
-    "Ugradnja itisona i tepih ploča",
-    "Nivelacija i priprema podloge",
+    "Reparacija drvenih materijala",
+    "Isporuka i ugradnja laminata",
+    "Isporuka i ugradnja LVT/SPC podova",
+    "Ugradnja tepiha, itisona i tepih ploča",
+    "Izlivanje nivelin mase i priprema podloge",
     "Prodaja i ugradnja puzli za teretane",
   ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
 };

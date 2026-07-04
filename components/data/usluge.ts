@@ -8,6 +8,7 @@ import {
   RulerIcon,
   CarpetIcon,
   LevelIcon,
+  WoodIcon,
   type IconProps,
 } from "../icons";
 
@@ -78,11 +79,11 @@ export const usluge: Usluga[] = [
     intro:
       "Stari parket ne mora da se mijenja — mora da se probudi. Brušenjem, kitovanjem i lakiranjem vraćamo podu izgled kakav je imao prvog dana.",
     body: [
-      "Radimo mašinama sa usisnim sistemom, pa je prašina svedena na minimum. Nakon brušenja pod kitujemo, po želji toniramo, i lakiramo u mat, polusjaj ili visoki sjaj.",
-      "Renoviranje je gotovo za nekoliko dana, a pod izgleda kao nov — uz višestruko nižu cijenu od zamjene.",
+      "Pod mašinski brusimo, kitujemo, po želji toniramo, i lakiramo u mat, polusjaj ili visoki sjaj.",
+      "Renoviranjem pod izgleda kao nov — uz višestruko nižu cijenu od zamjene.",
     ],
     points: [
-      "Mašine sa usisnim sistemom — minimum prašine",
+      "Mašinsko brušenje",
       "Kitovanje i popravka oštećenja",
       "Mat, polusjaj ili visoki sjaj",
       "Uljenje i toniranje po želji",
@@ -105,22 +106,43 @@ export const usluge: Usluga[] = [
     featured: true,
   },
   {
+    slug: "reparacija-drveta",
+    title: "Reparacija drvenih materijala",
+    short:
+      "Obnova svih drvenih površina — vrata, škure, stepeništa i drugi drveni elementi dobijaju novi život.",
+    icon: WoodIcon,
+    intro:
+      "Ne obnavljamo samo podove. Repariramo sve drvene materijale — od vrata i škura do stepeništa i drugih drvenih elemenata u prostoru.",
+    body: [
+      "Stare premaze skidamo, površinu brusimo i popravljamo oštećenja, a zatim drvo štitimo lakom, uljem ili bojom po želji.",
+      "Reparacija je često višestruko povoljnija od zamjene, a stolarija rađena od punog drveta gotovo uvijek vrijedi obnove.",
+    ],
+    points: [
+      "Vrata, škure i stolarija",
+      "Drvena stepeništa i gazišta",
+      "Skidanje starih premaza i brušenje",
+      "Zaštita lakom, uljem ili bojom",
+    ],
+    image: "/slike/foto-skure-vila.jpg",
+    gallery: ["/slike/foto-skure-vila.jpg"],
+  },
+  {
     slug: "laminat",
     title: "Laminat",
     short:
       "Brza i čista ugradnja laminata visoke klase otpornosti — idealan odnos cijene i kvaliteta.",
     icon: LaminateIcon,
     intro:
-      "Laminat je najbrži put do novog poda — veliki izbor dekora, otpornost na habanje i ugradnja koja je često gotova u jednom danu.",
+      "Laminat je najbrži put do novog poda — veliki izbor dekora, otpornost na habanje i brza, čista ugradnja.",
     body: [
-      "Nudimo laminate klase otpornosti AC4 i AC5, primjerene i za domove i za poslovne prostore sa velikim prometom. Uz pod ugrađujemo i podlogu, folije i lajsne.",
+      "Isporučujemo i ugrađujemo laminate za domove i poslovne prostore. Uz pod ugrađujemo i podlogu, folije i lajsne.",
       "Podloga se prije ugradnje nivelira po potrebi, jer ravan pod znači tiši i dugotrajniji laminat.",
     ],
     points: [
-      "Klase otpornosti AC4 / AC5",
+      "Isporuka i ugradnja",
       "Veliki izbor dekora",
-      "Ugradnja često u jednom danu",
-      "Podloge, folije i lajsne u ponudi",
+      "Brza i čista montaža",
+      "Podloge, folije i lajsne",
     ],
     image: "/radovi/laminat.jpg",
     gallery: ["/radovi/laminat.jpg", "/radovi/laminat-dekor.jpg"],
@@ -151,19 +173,19 @@ export const usluge: Usluga[] = [
   },
   {
     slug: "itison",
-    title: "Itison i tepih ploče",
+    title: "Tepisi, itison i tepih ploče",
     short:
-      "Ugradnja itisona i tepih ploča za kancelarije, hotele i stepeništa — tiho, toplo i reprezentativno.",
+      "Ugradnja tepiha, itisona i tepih ploča za kancelarije, hotele i stepeništa — tiho, toplo i reprezentativno.",
     icon: CarpetIcon,
     intro:
-      "Tekstilni podovi upijaju zvuk i daju prostoru toplinu. Ugrađujemo itisone i tepih ploče u kancelarijama, hotelima i na stepeništima.",
+      "Tekstilni podovi upijaju zvuk i daju prostoru toplinu. Ugrađujemo tepihe, itisone i tepih ploče u kancelarijama, hotelima i na stepeništima.",
     body: [
       "Tepih ploče su omiljeni izbor za poslovne prostore: lako se mijenjaju pojedinačno, kombinuju u šare i jednostavno prate podne razvodne kutije i instalacije.",
-      "Za hotele i stepeništa koristimo itisone visoke otpornosti sa preciznim krojenjem oko ograda, gazišta i ivica.",
+      "Za hotele i stepeništa koristimo itisone i tepihe visoke otpornosti sa preciznim krojenjem oko ograda, gazišta i ivica.",
     ],
     points: [
+      "Ugradnja tepiha i itisona",
       "Tepih ploče za kancelarije",
-      "Itisoni za hotele i hodnike",
       "Obloga stepeništa",
       "Zvučna i toplotna izolacija",
     ],
@@ -183,18 +205,18 @@ export const usluge: Usluga[] = [
     slug: "nivelacija",
     title: "Nivelacija i priprema podloge",
     short:
-      "Nivelišuće mase, košuljice i priprema podloge — temelj svakog kvalitetnog poda.",
+      "Izlivanje nivelin (nivelišuće) mase i priprema podloge — temelj svakog kvalitetnog poda.",
     icon: LevelIcon,
     intro:
-      "Nijedan pod nije bolji od podloge na kojoj leži. Izlivamo nivelišuće mase i pripremamo podloge za sve vrste završnih podova.",
+      "Nijedan pod nije bolji od podloge na kojoj leži. Izlivamo nivelin masu i pripremamo podloge za sve vrste završnih podova.",
     body: [
-      "Podlogu mjerimo, gletujemo i izlivamo samonivelišuće mase dok ne dobijemo ravan koja zadovoljava tolerancije za parket, vinil ili tekstil. Radimo i veće poslovne površine u jednom izlivanju.",
-      "Uz nivelaciju radimo i mašinsko šlajfovanje i usisavanje podloge, prajmere i hidroizolacione premaze.",
+      "Podlogu mjerimo i izlivamo samonivelišuću (nivelin) masu dok ne dobijemo ravan koja zadovoljava tolerancije za parket, vinil ili tekstil. Radimo i veće poslovne površine u jednom izlivanju.",
+      "Uz nivelaciju radimo i mašinsku obradu i usisavanje podloge prije polaganja završnog poda.",
     ],
     points: [
-      "Samonivelišuće mase",
+      "Izlivanje nivelin mase",
       "Velike površine u jednom izlivanju",
-      "Prajmeri i hidroizolacija",
+      "Priprema za sve vrste podova",
       "Mjerenje vlage i ravnosti",
     ],
     image: "/slike/foto-poliranje-hala.jpg",
@@ -234,15 +256,15 @@ export const usluge: Usluga[] = [
       "Izlazak na teren, precizno mjerenje i stručan savjet o materijalu prije svake ugradnje.",
     icon: RulerIcon,
     intro:
-      "Svaki posao počinje besplatnim izlaskom na teren: mjerimo prostor, provjeravamo podlogu i predlažemo materijal koji ima smisla za vaš budžet.",
+      "Svaki posao počinje izlaskom na teren: mjerimo prostor, provjeravamo podlogu i predlažemo materijal koji ima smisla za vaš budžet. Ako dođe do dogovora, izlazak i procjena se ne naplaćuju.",
     body: [
-      "Procjenjujemo stanje postojeće podloge, mjerimo vlagu i ravnost, i na osnovu toga dajemo jasnu ponudu — bez skrivenih troškova i bez obaveze.",
-      "Pomažemo i oko izbora: donosimo uzorke dekora, objašnjavamo razlike među materijalima i preporučujemo šta se gdje najbolje ponaša.",
+      "Procjenjujemo stanje postojeće podloge, mjerimo vlagu i ravnost, i na osnovu toga dajemo jasnu ponudu — bez skrivenih troškova.",
+      "Pomažemo i oko izbora: objašnjavamo razlike među materijalima i preporučujemo šta se gdje najbolje ponaša.",
     ],
     points: [
-      "Besplatan izlazak i mjerenje",
+      "Izlazak na teren i mjerenje",
+      "Besplatno ukoliko dođe do dogovora",
       "Procjena stanja podloge",
-      "Uzorci i preporuka materijala",
       "Jasna i fer ponuda",
     ],
     image: "/slike/foto-brusenje.jpg",

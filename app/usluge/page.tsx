@@ -9,7 +9,7 @@ export const unstable_instant = { prefetch: "static" };
 export const metadata: Metadata = {
   title: "Usluge",
   description:
-    "Isporuka i ugradnja parketa, laminata, LVT/SPC podova, itisona i tepih ploča, nivelacija podloge, brušenje i lakiranje, podovi za teretane.",
+    "Isporuka i ugradnja parketa, laminata, LVT/SPC podova, tepiha i itisona, izlivanje nivelin mase, brušenje i lakiranje, reparacija drvenih materijala, podovi za teretane.",
 };
 
 export default function UslugePage() {

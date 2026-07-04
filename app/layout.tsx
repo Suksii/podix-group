@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s · Podix Group",
   },
   description:
-    "Podix Group — isporuka i profesionalna ugradnja svih vrsta podova: parket, laminat, LVT/SPC, itison i tepih ploče, nivelacija podloge i podovi za teretane. Brza isporuka, profesionalna ugradnja.",
+    "Podix Group — isporuka i profesionalna ugradnja svih vrsta podova: parket, laminat, LVT/SPC, tepisi i itison, izlivanje nivelin mase, reparacija drvenih materijala i podovi za teretane. Brza isporuka, profesionalna ugradnja.",
   keywords: [
     "podovi",
     "ugradnja podova",
@@ -35,9 +35,11 @@ export const metadata: Metadata = {
     "SPC",
     "vinil pod",
     "itison",
+    "tepih",
     "tepih ploče",
     "nivelacija poda",
-    "košuljica",
+    "nivelin masa",
+    "reparacija drveta",
     "puzle za teretane",
     "brušenje parketa",
     "Podix Group",

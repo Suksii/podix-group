@@ -35,8 +35,8 @@ export default function Contact() {
                   Spremni za novi <span className="text-gradient">pod?</span>
                 </h2>
                 <p className="mt-4 max-w-md text-lg leading-relaxed text-white/65">
-                  Pošaljite upit ili nas pozovite. Izlazimo na teren, mjerimo i
-                  dajemo besplatnu procjenu — bez ikakve obaveze.
+                  Pošaljite upit ili nas pozovite. Izlazimo na teren, mjerimo
+                  i dajemo procjenu — besplatno ukoliko dođe do dogovora.
                 </p>
 
                 <ul className="mt-10 space-y-5">
@@ -83,7 +83,7 @@ export default function Contact() {
             <div className="p-8 sm:p-12">
               <Reveal>
                 <h3 className="font-display text-2xl font-semibold tracking-tight">
-                  Zatraži besplatnu ponudu
+                  Zatraži ponudu
                 </h3>
                 <p className="mt-2 text-muted">
                   Popunite formu — javljamo se u najkraćem roku.

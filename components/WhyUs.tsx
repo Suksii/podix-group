@@ -1,5 +1,4 @@
 import Reveal from "./Reveal";
-import Counter from "./Counter";
 import { ShieldIcon, ClockIcon, SparkIcon, BroomIcon } from "./icons";
 
 const features = [
@@ -25,12 +24,8 @@ const features = [
   },
 ];
 
-const stats = [
-  { to: 500, suffix: "+", label: "Završenih projekata" },
-  { to: 10, suffix: "+", label: "Godina iskustva" },
-  { to: 100, suffix: "%", label: "Zadovoljnih klijenata" },
-  { to: 7, suffix: "", label: "Vrsta podova" },
-];
+// Prostori u kojima stvarno radimo — vidljivo iz galerije radova
+const prostori = ["Stanovi i kuće", "Hoteli", "Kancelarije", "Teretane", "Stepeništa"];
 
 export default function WhyUs() {
   return (
@@ -56,16 +51,21 @@ export default function WhyUs() {
               našeg posla.
             </p>
 
-            {/* Stats */}
-            <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
-              {stats.map((s) => (
-                <div key={s.label}>
-                  <div className="font-display text-4xl font-bold text-white sm:text-5xl">
-                    <Counter to={s.to} suffix={s.suffix} />
-                  </div>
-                  <div className="mt-1.5 text-sm text-white/55">{s.label}</div>
-                </div>
-              ))}
+            {/* Gdje radimo */}
+            <div className="mt-10">
+              <div className="text-sm font-semibold uppercase tracking-wider text-white/40">
+                Gdje radimo
+              </div>
+              <ul className="mt-4 flex flex-wrap gap-2.5">
+                {prostori.map((p) => (
+                  <li
+                    key={p}
+                    className="rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-sm font-medium text-white/85"
+                  >
+                    {p}
+                  </li>
+                ))}
+              </ul>
             </div>
           </Reveal>
 

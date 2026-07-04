@@ -1,15 +1,17 @@
 import Link from "next/link";
 import VideoInView from "./VideoInView";
-import { ArrowRight, CheckIcon, SparkIcon } from "./icons";
+import { ArrowRight, CheckIcon, SparkIcon, InstagramIcon } from "./icons";
 import { site } from "./site";
+import { usluge } from "./data/usluge";
 
 const marqueeItems = [
   "Parket",
   "Laminat",
   "LVT / SPC",
-  "Itison i tepih ploče",
-  "Nivelacija podloge",
+  "Tepisi i itison",
+  "Nivelin masa",
   "Brušenje & lakiranje",
+  "Reparacija drveta",
   "Podovi za teretane",
 ];
 
@@ -35,8 +37,9 @@ export default function Hero() {
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted animate-[fade-up_0.7s_0.16s_both]">
             {site.name} isporučuje i ugrađuje sve vrste podova — parket,
-            laminat, LVT/SPC, itison i podove za teretane. Od pripreme podloge
-            do završnog detalja, sve na jednom mjestu.
+            laminat, LVT/SPC, tepihe i itisone, podove za teretane — i
+            reparira sve drvene materijale. Od pripreme podloge do završnog
+            detalja, sve na jednom mjestu.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 animate-[fade-up_0.7s_0.24s_both] sm:flex-row sm:items-center">
@@ -44,7 +47,7 @@ export default function Hero() {
               href="/kontakt"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-brand px-7 py-4 text-base font-semibold text-white shadow-glow transition-transform hover:-translate-y-0.5"
             >
-              Besplatna procjena
+              Zatraži ponudu
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
@@ -91,15 +94,23 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Floating stat */}
+          {/* Floating chips — činjenice, ne pretpostavke */}
           <div className="absolute -bottom-4 -left-2 hidden rounded-2xl bg-white px-5 py-4 shadow-soft sm:block">
-            <div className="font-display text-3xl font-bold text-brand-600">500+</div>
-            <div className="text-xs font-medium text-muted">završenih projekata</div>
+            <div className="font-display text-3xl font-bold text-brand-600">{usluge.length}</div>
+            <div className="text-xs font-medium text-muted">usluga za vaš prostor</div>
           </div>
-          <div className="absolute -right-2 top-8 hidden animate-float rounded-2xl bg-white px-5 py-4 shadow-soft lg:block">
-            <div className="font-display text-3xl font-bold text-brand-600">5,0★</div>
-            <div className="text-xs font-medium text-muted">ocjena klijenata</div>
-          </div>
+          <a
+            href={site.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute -right-2 top-8 hidden animate-float rounded-2xl bg-white px-5 py-4 shadow-soft transition-transform hover:-translate-y-0.5 lg:block"
+          >
+            <div className="flex items-center gap-2 font-display text-lg font-bold text-brand-600">
+              <InstagramIcon className="h-5 w-5" />
+              {site.instagramHandle}
+            </div>
+            <div className="mt-0.5 text-xs font-medium text-muted">pogledajte naše radove</div>
+          </a>
         </div>
       </div>
 

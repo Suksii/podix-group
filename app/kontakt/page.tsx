@@ -8,7 +8,7 @@ export const unstable_instant = { prefetch: "static" };
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Kontaktirajte Podix Group — besplatan izlazak na teren, mjerenje i procjena. Telefon: 068 890 421, email: podixgroup@gmail.com.",
+    "Kontaktirajte Podix Group — izlazak na teren, mjerenje i procjena, besplatno ukoliko dođe do dogovora. Telefon: 068 890 421, email: podixgroup@gmail.com.",
 };
 
 const jsonLd = {
@@ -37,7 +37,7 @@ export default function KontaktPage() {
             Recite nam šta radite — <span className="text-gradient">mi ćemo pod.</span>
           </>
         }
-        description="Pozovite, pišite ili popunite formu. Izlazimo na teren, mjerimo i dajemo besplatnu procjenu — bez ikakve obaveze."
+        description="Pozovite, pišite ili popunite formu. Izlazimo na teren, mjerimo i dajemo procjenu — besplatno ukoliko dođe do dogovora."
       />
       <div className="pb-6">
         <Contact />

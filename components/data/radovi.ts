@@ -10,7 +10,7 @@ export const kategorije: { id: Kategorija | "sve"; label: string }[] = [
   { id: "sve", label: "Sve" },
   { id: "parket", label: "Parket" },
   { id: "brusenje", label: "Brušenje i lakiranje" },
-  { id: "itison", label: "Itison i tepih ploče" },
+  { id: "itison", label: "Tepisi i itison" },
   { id: "nivelacija", label: "Nivelacija" },
   { id: "vinil", label: "LVT i vinil" },
   { id: "teretane", label: "Teretane" },

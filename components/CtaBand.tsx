@@ -19,8 +19,8 @@ export default function CtaBand() {
                 <span className="text-gradient">Popričajmo.</span>
               </h2>
               <p className="mt-3 max-w-lg text-white/65">
-                Besplatan izlazak na teren, mjerenje i procjena — bez ikakve
-                obaveze.
+                Izlazimo na teren, mjerimo i dajemo procjenu — a ukoliko dođe
+                do dogovora, izlazak i procjena se ne naplaćuju.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
