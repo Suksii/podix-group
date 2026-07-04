@@ -34,14 +34,15 @@ export default function Header() {
 
   return (
     <>
-      <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-sand/85 backdrop-blur-xl border-b border-ink/10 shadow-soft"
-            : "bg-transparent border-b border-transparent"
-        }`}
-      >
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
+      {/* Plutajuća navigacija — odmaknuta od ivica, zaobljena u pilulu */}
+      <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
+        <div
+          className={`mx-auto flex h-16 max-w-6xl items-center justify-between rounded-full border pl-5 pr-2.5 transition-all duration-500 sm:pl-6 sm:pr-3 ${
+            scrolled
+              ? "border-ink/10 bg-sand/90 shadow-soft backdrop-blur-xl"
+              : "border-white/60 bg-white/50 shadow-soft backdrop-blur-md"
+          }`}
+        >
           <Link href="/" className="flex items-center gap-2 group" aria-label="Podix Group — početna">
             <Image
               src="/podix-logo.png"
@@ -49,7 +50,7 @@ export default function Header() {
               width={165}
               height={70}
               priority
-              className="h-[3.75rem] w-auto transition-transform duration-500 group-hover:scale-105"
+              className="h-14 w-auto transition-transform duration-500 group-hover:scale-105"
             />
           </Link>
 
@@ -117,18 +118,21 @@ export default function Header() {
             : "pointer-events-none -translate-y-2 opacity-0"
         }`}
       >
-        <div className="flex h-20 shrink-0 items-center justify-between px-5">
-          <Image src="/podix-logo.png" alt="Podix Group" width={165} height={70} className="h-[3.25rem] w-auto" />
-          <button
-            type="button"
-            onClick={() => setOpen(false)}
-            aria-label="Zatvori meni"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-ink/15 bg-white/70"
-          >
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
-              <path d="M6 6l12 12M18 6L6 18" />
-            </svg>
-          </button>
+        {/* Vrh overlay-a prati poziciju plutajuće navigacije */}
+        <div className="shrink-0 px-3 pt-3 sm:px-5 sm:pt-4">
+          <div className="mx-auto flex h-16 max-w-6xl items-center justify-between pl-5 pr-2.5 sm:pl-6 sm:pr-3">
+            <Image src="/podix-logo.png" alt="Podix Group" width={165} height={70} className="h-12 w-auto" />
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              aria-label="Zatvori meni"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-ink/15 bg-white/70"
+            >
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
+                <path d="M6 6l12 12M18 6L6 18" />
+              </svg>
+            </button>
+          </div>
         </div>
 
         <nav className="flex flex-1 flex-col justify-center gap-1 px-6 pb-8">
