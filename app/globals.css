@@ -92,6 +92,37 @@
 }
 
 /* ---------------------------------------------------------------------------
+   FAQ akordeon — glatko razmotavanje odgovora.
+   ::details-content + interpolate-size rade u novijim browserima;
+   stariji dobiju trenutno otvaranje uz fade-up teksta (fallback ispod).
+--------------------------------------------------------------------------- */
+.faq-item {
+  interpolate-size: allow-keywords;
+}
+.faq-item::details-content {
+  opacity: 0;
+  block-size: 0;
+  overflow: clip;
+  transition:
+    content-visibility 0.5s allow-discrete,
+    opacity 0.5s var(--ease-out-expo),
+    block-size 0.5s var(--ease-out-expo);
+}
+.faq-item[open]::details-content {
+  opacity: 1;
+  block-size: auto;
+}
+/* tekst odgovora blago doklizi — radi i tamo gdje ::details-content ne radi */
+.faq-item[open] .faq-answer {
+  animation: fade-up 0.5s var(--ease-out-expo) both;
+  animation-delay: 0.08s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .faq-item::details-content { transition: none; }
+  .faq-item[open] .faq-answer { animation: none; }
+}
+
+/* ---------------------------------------------------------------------------
    Keyframes & utilities
 --------------------------------------------------------------------------- */
 @keyframes fade-up {

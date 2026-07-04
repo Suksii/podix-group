@@ -19,7 +19,7 @@ export default function Faq() {
         <div className="mt-10 grid grid-cols-1 gap-3 lg:grid-cols-2 lg:items-start">
           {faq.map((item, i) => (
             <Reveal key={item.q} delay={(i % 2) * 80}>
-              <details className="group rounded-3xl border border-ink/10 bg-white px-6 py-5 shadow-soft transition-colors open:border-brand/30 hover:border-brand/30">
+              <details className="faq-item group rounded-3xl border border-ink/10 bg-white px-6 py-5 shadow-soft transition-colors open:border-brand/30 hover:border-brand/30">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-semibold tracking-tight [&::-webkit-details-marker]:hidden">
                   {item.q}
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand-600 transition-transform duration-300 group-open:rotate-45">
@@ -28,7 +28,7 @@ export default function Faq() {
                     </svg>
                   </span>
                 </summary>
-                <p className="mt-3 leading-relaxed text-muted">{item.a}</p>
+                <p className="faq-answer mt-3 leading-relaxed text-muted">{item.a}</p>
               </details>
             </Reveal>
           ))}
