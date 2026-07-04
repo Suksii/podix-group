@@ -44,13 +44,14 @@ export default function Header() {
           }`}
         >
           <Link href="/" className="flex items-center gap-2 group" aria-label="Podix Group — početna">
+            {/* Isječena verzija loga (bez providnih margina) — puna visina znaka */}
             <Image
-              src="/podix-logo.png"
+              src="/podix-logo-trim.png"
               alt="Podix Group"
-              width={165}
-              height={70}
+              width={445}
+              height={159}
               priority
-              className="h-14 w-auto transition-transform duration-500 group-hover:scale-105"
+              className="h-10 w-auto transition-transform duration-500 group-hover:scale-105 sm:h-11"
             />
           </Link>
 
@@ -121,7 +122,7 @@ export default function Header() {
         {/* Vrh overlay-a prati poziciju plutajuće navigacije */}
         <div className="shrink-0 px-3 pt-3 sm:px-5 sm:pt-4">
           <div className="mx-auto flex h-16 max-w-6xl items-center justify-between pl-5 pr-2.5 sm:pl-6 sm:pr-3">
-            <Image src="/podix-logo.png" alt="Podix Group" width={165} height={70} className="h-12 w-auto" />
+            <Image src="/podix-logo-trim.png" alt="Podix Group" width={445} height={159} className="h-10 w-auto" />
             <button
               type="button"
               onClick={() => setOpen(false)}
