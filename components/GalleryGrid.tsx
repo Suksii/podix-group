@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import VideoInView from "./VideoInView";
 import { kategorije, type Kategorija, type Rad } from "./data/radovi";
@@ -129,8 +130,10 @@ export default function GalleryGrid({ items, hideFilters }: GalleryGridProps) {
         <p className="mt-10 text-muted">Nema radova u ovoj kategoriji — pogledajte ostale.</p>
       )}
 
-      {/* Lightbox */}
-      {lightbox && (
+      {/* Lightbox — kroz portal u <body>: template animira transform na
+          omotaču stranice, a transformisani predak "zarobi" position:fixed
+          pa bi se overlay centrirao na sredinu stranice umjesto ekrana. */}
+      {lightbox && createPortal(
         <div
           role="dialog"
           aria-modal="true"
@@ -173,7 +176,8 @@ export default function GalleryGrid({ items, hideFilters }: GalleryGridProps) {
               {lightbox.alt}
             </p>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
