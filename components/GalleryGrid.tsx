@@ -72,20 +72,20 @@ export default function GalleryGrid({ items, hideFilters }: GalleryGridProps) {
             }`}
             style={{ animationDelay: `${Math.min(i, 8) * 50}ms` }}
           >
-            {rad.video ? (
-              <VideoInView
-                src={rad.video}
-                poster={rad.poster}
-                className="absolute inset-0 h-full w-full object-cover"
-                aria-label={rad.alt}
-              />
-            ) : (
-              <button
-                type="button"
-                onClick={() => setLightbox(rad)}
-                className="absolute inset-0 cursor-zoom-in"
-                aria-label={`Uvećaj: ${rad.alt}`}
-              >
+            <button
+              type="button"
+              onClick={() => setLightbox(rad)}
+              className="absolute inset-0 cursor-zoom-in"
+              aria-label={rad.video ? `Pusti video: ${rad.alt}` : `Uvećaj: ${rad.alt}`}
+            >
+              {rad.video ? (
+                <VideoInView
+                  src={rad.video}
+                  poster={rad.poster}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  aria-label={rad.alt}
+                />
+              ) : (
                 <Image
                   src={rad.src}
                   alt={rad.alt}
@@ -93,8 +93,8 @@ export default function GalleryGrid({ items, hideFilters }: GalleryGridProps) {
                   sizes="(max-width: 1024px) 50vw, 25vw"
                   className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-110"
                 />
-              </button>
-            )}
+              )}
+            </button>
 
             <figcaption className="pointer-events-none absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/70 via-ink/10 to-transparent p-4">
               <span className="flex w-fit items-center gap-1.5 rounded-full bg-brand px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
@@ -107,6 +107,20 @@ export default function GalleryGrid({ items, hideFilters }: GalleryGridProps) {
                 </span>
               )}
             </figcaption>
+
+            {/* Jasna oznaka: video se pušta, slika se uvećava */}
+            <span className="pointer-events-none absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-ink/50 text-white backdrop-blur-sm transition-transform duration-300 group-hover:scale-110">
+              {rad.video ? (
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+                  <path d="M9 7.5v9l7.5-4.5L9 7.5Z" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
+                  <circle cx="11" cy="11" r="6" />
+                  <path d="m20 20-4.8-4.8M11 8.5v5M8.5 11h5" />
+                </svg>
+              )}
+            </span>
           </figure>
         ))}
       </div>
@@ -135,13 +149,26 @@ export default function GalleryGrid({ items, hideFilters }: GalleryGridProps) {
             </svg>
           </button>
           <div className="relative h-full max-h-[85vh] w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
-            <Image
-              src={lightbox.src}
-              alt={lightbox.alt}
-              fill
-              sizes="100vw"
-              className="object-contain"
-            />
+            {lightbox.video ? (
+              <video
+                src={lightbox.video}
+                poster={lightbox.poster}
+                controls
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="h-full w-full object-contain"
+              />
+            ) : (
+              <Image
+                src={lightbox.src}
+                alt={lightbox.alt}
+                fill
+                sizes="100vw"
+                className="object-contain"
+              />
+            )}
             <p className="absolute inset-x-0 -bottom-1 translate-y-full pt-3 text-center text-sm text-white/70">
               {lightbox.alt}
             </p>
