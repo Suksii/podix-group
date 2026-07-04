@@ -37,7 +37,7 @@ export default function Header() {
       {/* Plutajuća navigacija — odmaknuta od ivica, zaobljena u pilulu */}
       <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
         <div
-          className={`mx-auto flex h-16 max-w-6xl items-center justify-between rounded-full border pl-5 pr-2.5 transition-all duration-500 sm:pl-6 sm:pr-3 ${
+          className={`mx-auto flex h-16 max-w-7xl items-center justify-between rounded-full border pl-5 pr-2.5 transition-all duration-500 sm:pl-8 sm:pr-3 ${
             scrolled
               ? "border-ink/10 bg-sand/90 shadow-soft backdrop-blur-xl"
               : "border-white/60 bg-white/50 shadow-soft backdrop-blur-md"
@@ -121,7 +121,7 @@ export default function Header() {
       >
         {/* Vrh overlay-a prati poziciju plutajuće navigacije */}
         <div className="shrink-0 px-3 pt-3 sm:px-5 sm:pt-4">
-          <div className="mx-auto flex h-16 max-w-6xl items-center justify-between pl-5 pr-2.5 sm:pl-6 sm:pr-3">
+          <div className="mx-auto flex h-16 max-w-7xl items-center justify-between pl-5 pr-2.5 sm:pl-8 sm:pr-3">
             <Image src="/podix-logo-trim.png" alt="Podix Group" width={445} height={159} className="h-10 w-auto" />
             <button
               type="button"
