@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Contact from "@/components/Contact";
+import Faq from "@/components/Faq";
+import { faq } from "@/components/data/faq";
 import { site } from "@/components/site";
 
 export const unstable_instant = { prefetch: "static" };
@@ -23,12 +25,26 @@ const jsonLd = {
   sameAs: [site.instagram],
 };
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
 export default function KontaktPage() {
   return (
     <main className="flex-1">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <PageHero
         eyebrow="Kontakt"
@@ -42,6 +58,7 @@ export default function KontaktPage() {
       <div className="pb-6">
         <Contact />
       </div>
+      <Faq />
     </main>
   );
 }
